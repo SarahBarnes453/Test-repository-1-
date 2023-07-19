@@ -1,0 +1,25 @@
+echo "# Test-repository-1-" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/SarahBarnes453/Test-repository-1-.git
+git push -u origin main
+git clone https://github.com/scroll-tech/scroll-contract-deploy-demo.git
+cd scroll-contract-deploy-demo
+yarn install
+git clone https://github.com/scroll-tech/scroll-contract-deploy-demo.git
+cd scroll-contract-deploy-demo
+curl -L https://foundry.paradigm.xyz | bash
+foundryup
+forge create --rpc-url https://alpha-rpc.scroll.io/l2 \
+  --value <lock_amount> \
+  --constructor-args <unlock_time> \
+  --private-key <your_private_key> \
+  --legacy \
+  contracts/Lock.sol:Lock
+forge create --rpc-url https://alpha-rpc.scroll.io/l2 \
+  --value 0.00000000002ether \
+  --constructor-args 1696118400 \
+  --private-key 0xabc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc1 \
+  --legacy contracts/Lock.sol:Lock
